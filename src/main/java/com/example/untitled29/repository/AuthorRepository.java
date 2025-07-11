@@ -42,7 +42,7 @@ public class AuthorRepository {
         store.put(id, updatedAuthor);               // 이름은 바꾼다 (.put 으로인해 덮어씌워진다)
 
         return updatedAuthor;
-    }
+    } // 근데 save 가 update 기능도 수행중이라 이건 없어도 될것같다.
 
     // 삭제를 하면 반환값이 없다 그래서 void
     // 만약 삭제한 데이터를 모아두고싶으면 void 말고 다른거

@@ -74,7 +74,7 @@ public class AuthorController {
     // REST API 에서 맵핑 앞에 있는 GET POST DELETE 등은 포스트맨에서 고르는거랑 같다
     // REST API 는 응답?을 하는것이다 그래서 당연스럽게 응답을 처리하는 Response 가 와야한다
     // 그러나 위에서 Author , List<> 를 쓴 이유는 SpringBoot 내에 자동으로 Response 로 바꿔주는 기능이 있기 때문
-    // 하지만 이번에는 반환값이 없기 때문에 ResponseEntity<void> 를 적어줘야한다
+    // 하지만 이번에는 반환값이 없기 때문에 ResponseEntity<void> 를 적어줘야한다 (와일드카드 '?' 도 가능)
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         authorService.delete(id);
