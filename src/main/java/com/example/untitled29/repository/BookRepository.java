@@ -32,6 +32,17 @@ public class BookRepository {
         return book;
     }
 
+//    public Book update(Integer id, Book updatedBook) {
+//        if (!store.containsKey(id)) {
+//            throw new NoSuchElementException(id + "의 책이 없습니다");
+//        }
+//
+//        updatedBook.setId(id);
+//        store.put(id, updatedBook);
+//
+//        return updatedBook;
+//    }
+
     public void delete(Integer id) {
         store.remove(id);
     }

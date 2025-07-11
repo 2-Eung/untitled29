@@ -25,6 +25,17 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    public Book update(Integer id, Book book) {
+        getById(id);             // 아이디 값을 넣어서 값이 (책이) 있으면 통과 값이 (책이) 없으면 에러가 뜬다
+        book.setId(id);          // 통과하면 실행
+
+        return bookRepository.save(book);
+    } // Repository 에서 update 삭제 후 코드
+
+//    public Book update(Integer id, Book book) {
+//        return bookRepository.update(id, book);
+//    } // Repository 에서 update 삭제 전 코드
+
     public void delete(Integer id) {
         bookRepository.delete(id);
     }

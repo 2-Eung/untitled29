@@ -36,6 +36,15 @@ public class BookController {
         return bookService.create(book);
     }
 
+    @PutMapping("/{id}")
+    public Book update(@PathVariable Integer id, @Valid @RequestBody BookDto bookDto) {
+        Book book = new Book();
+        book.setTitle(bookDto.getTitle());          // 타이틀 바꾸기
+        book.setAuthorId(bookDto.getAuthorId());       // 작가 바꾸기
+
+        return bookService.update(id, book);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         bookService.delete(id);
