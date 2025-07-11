@@ -26,7 +26,7 @@ public class BookController {
         return bookService.getById(id);
     }
 
-    @PostMapping
+    @PostMapping              // JSON 형식으로 받겠다?
     public Book create(@Valid @RequestBody BookDto bookDto) {
         Book book = new Book();                  // 새 Book 을 만들고
         book.setTitle(bookDto.getTitle());       // 요소들을 넣는다.
